@@ -1,0 +1,92 @@
+#back {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+}
+#back path {
+    fill: none;
+    stroke: var(--layer1);
+    stroke-width: 10rem;
+    width: 100%;
+
+    stroke-dasharray: 50vmax;
+    stroke-linecap: round;
+    animation: draw 60s linear infinite;
+}
+@keyframes draw {
+    0% { stroke-dashoffset: 100vmax; }
+    100% { stroke-dashoffset: 0vmax; }
+}
+
+#profile {
+    position: absolute;
+    top: calc(45% - 12.5rem);
+    left: calc(50% - 47rem);
+    width: 25rem; height: 25rem;
+    border-radius: 12.5rem;
+
+    outline: .5rem solid var(--layer9);
+}
+
+#links {
+    position: absolute;
+    top: 45%; left: calc(50% - 18rem);
+    transform: translateY(-50%);
+
+    display: grid;
+    grid-template-columns: repeat(3, 20rem);
+    grid-auto-rows: 8rem;
+    gap: 2rem;
+}
+
+#links a {
+    position: relative;
+}
+.link {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.link-info {
+    position: absolute;
+    top: -.8rem; right: -.8rem;
+    padding: .4rem .8rem .4rem .8rem;
+    font-size: 1.5rem;
+    border-radius: .5rem;
+    background: var(--layer7);
+    color: var(--layer1);
+}
+.link-icon {
+    position: absolute;
+    bottom: -1.5rem; right: -1.5rem;
+    width: 9rem; height: 9rem;
+    opacity: .5;
+}
+.link-icon use {
+    fill: var(--object-layer0);
+}
+.link-name {
+    position: absolute;
+    top: 1.5rem; left: 1.5rem;
+    font-size: 3rem;
+    line-height: 3rem;
+}
+.link-profile {
+    position: absolute;
+    top: 5rem; left: 1.5rem;
+    font-size: 1.5rem;
+    color: var(--object-layer8);
+}
+
+@media (orientation: portrait) {
+    #profile {
+        left: calc(50% - 12.5rem);
+        top: calc(50% - 30rem);
+    }
+
+    #links {
+        top: calc(50% + 15rem);
+        left: calc(50% - 32rem);
+    }
+}

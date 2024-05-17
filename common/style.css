@@ -1,0 +1,96 @@
+@font-face {
+    font-family: "Roboto";
+    src: url("/common/assets/font.woff");
+}
+
+:root {
+    font-size: min(1vmin, 10px);
+
+    /*--layer0: #ffffff;
+    --layer1: #fafafa;
+    --layer8: #707070;
+    --layer9: #202020;
+
+    --object-layer0: #a0a0a020;
+    --object-layer1: #a0a0a010;
+    --object-layer7: #a0a0a060;
+    --object-layer8: #a0a0a040;
+    --object-layer9: #404040;*/
+
+    --layer0: #101010;
+    --layer1: #151515;
+    --layer7: #707070;
+    --layer8: #a0a0a0;
+    --layer9: #f0f0f0;
+    
+    --object-layer0: #f0f0f020;
+    --object-layer1: #f0f0f030;
+    --object-layer7: #f0f0f060;
+    --object-layer8: #f0f0f070;
+    --object-layer9: #d0d0d0;
+}
+
+* {
+    font-family: "Roboto";
+    font-size: 1rem;
+}
+
+body {
+    background: var(--layer0);
+    color: var(--layer9);
+}
+
+button {
+    border: none;
+
+    border-radius: .5rem;
+    outline: .5rem solid var(--object-layer7);
+    background: var(--object-layer0);
+    color: var(--object-layer9);
+
+    cursor: pointer;
+}
+a:hover button, a:focus button {
+    outline: .5rem solid var(--object-layer8);
+}
+a:hover button {
+    background: var(--object-layer1);
+}
+a:active button {
+    outline: .5rem solid var(--object-layer7);
+}
+
+a {
+    outline: none;
+    color: var(--layer9);
+    text-decoration: none;
+}
+a:hover, a:focus {
+    text-decoration: underline;
+}
+a:active {
+    color: var(--layer8);
+}
+
+.header {
+    position: absolute;
+    top: 1rem;
+
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+.header-left { left: 2rem; }
+.header-right { right: 2rem; }
+.header a {
+    position: relative;
+    padding: 1rem .5rem 1rem .5rem;
+    font-size: 2.2rem;
+}
+.header a[current]::after {
+    content: "";
+    position: absolute;
+    top: 100%; left: 0;
+    width: 100%; height: .3rem;
+    background: var(--object-layer9);
+}

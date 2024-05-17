@@ -1,0 +1,2 @@
+Sitemap: https://eliaskamm.com/sitemap.xml
+User-agent: *

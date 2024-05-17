@@ -1,2 +1,2 @@
 # eliaskamm.com
-my current website and homepage
+This is my current website at [eliaskamm.com](https://eliaskamm.com/).

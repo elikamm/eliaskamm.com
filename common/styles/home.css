@@ -1,0 +1,78 @@
+#back {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    overflow: hidden;
+
+    background: var(--layer1);
+}
+#back-frame {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+
+    image-rendering: pixelated;
+    mix-blend-mode: multiply;
+}
+#back-measure {
+    width: .5rem;
+}
+
+#logo {
+    position: absolute;
+    top: calc(50% - 35rem);
+    left: calc(50% - 22rem);
+    width: 40rem; height: 40rem;
+
+    font-size: 1em;
+    stroke: var(--layer9);
+}
+#logo use:nth-of-type(1) {
+    animation: logo-e-draw 1s linear;
+}
+#logo use:nth-of-type(2) {
+    animation: logo-k-draw 1.2s linear;
+}
+@keyframes logo-e-draw {
+    0% { stroke-dasharray: 20em; stroke-dashoffset: 20em; }
+    100% { stroke-dasharray: 20em; stroke-dashoffset: 0em; }
+}
+@keyframes logo-k-draw {
+    0% { stroke-dasharray: 20em; stroke-dashoffset: 20em; }
+    20% { stroke-dasharray: 20em; stroke-dashoffset: 20em; }
+    100% { stroke-dasharray: 20em; stroke-dashoffset: 0em; }
+}
+
+#names {
+    position: absolute;
+    top: calc(50% + 12rem); left: 0;
+    width: 100%; height: 8rem;
+    overflow: hidden;
+}
+#names a {
+    position: absolute;
+    top: -100%; left: 50%;
+    font-size: 5rem;
+    line-height: 5rem;
+    padding: 1.5rem;
+    transform: translateX(-50%);
+}
+#names a[fly-in] {
+    animation: fly-in .2s ease-in-out forwards;
+}
+#names a[fly-out] {
+    animation: fly-out .2s ease-in-out forwards;
+}
+#names a[initial] {
+    animation-delay: .4s;
+}
+
+@keyframes fly-in {
+    0% { top: -100%; }
+    100% { top: 0; }
+}
+
+@keyframes fly-out {
+    0% { top: 0; }
+    100% { top: 100%; }
+}

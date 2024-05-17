@@ -1,0 +1,8 @@
+#note {
+    position: absolute;
+    top: calc(50% - 2rem); left: 0;
+    width: 100%; line-height: 4rem;
+    font-size: 4rem;
+
+    text-align: center;
+}

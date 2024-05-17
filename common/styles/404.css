@@ -1,0 +1,43 @@
+body {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#logo {
+    position: absolute;
+    bottom: -10rem; right: -10rem;
+    width: 100rem; height: 100rem;
+}
+#logo {
+    stroke: var(--layer1);
+}
+
+#info {
+    position: absolute;
+    font-size: 3rem;
+    line-height: 3rem;
+    top: calc(30% - 4rem);
+    left: calc(50% - 40rem);
+    color: var(--layer8);
+}
+
+#title {
+    position: absolute;
+    font-size: 9rem;
+    line-height: 9rem;
+    top: 30%; left: calc(50% - 40rem);
+}
+
+.home {
+    position: absolute;
+    bottom: calc(15% - 3rem);
+    width: 20rem; height: 6rem;
+    font-size: 2.5rem;
+}
+
+#home-de {
+    left: calc(50% - 22rem);
+}
+#home-en {
+    left: calc(50% + 2rem);
+}

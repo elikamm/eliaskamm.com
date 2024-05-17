@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Elias Kamm</title>
+        <link rel="icon" href="/favicon.ico" sizes="any"/>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content="Hi! I'm Elias Kamm. | Hi! Ich bin Elias Kamm."/>
+        <meta name="keywords" content="Elias Kamm, Developer, Programmer, Designer, Entwickler, Programmierer, Gestalter"/>
+        <meta name="author" content="Elias Kamm"/>
+
+        <script>
+            let german = false,
+                language = navigator.language.toLowerCase() ?? 'en',
+                search = new URLSearchParams(window.location.search),
+                path = '/';
+            
+            if (language.startsWith('de')) german = true;
+            
+            if (search.has('path')) path = search.get('path');
+
+            window.location.replace((german ? '/de' : '/en') + path);
+        </script>
+    </head>
+
+    <body>
+        <center>
+            <h2>Elias Kamm</h2><br>
+
+            <h1>Click <a href="/en/">here</a> to continue.</h1>
+            <h1>Klicken Sie <a href="/de/">hier</a> zum Fortfahren.</h1>
+        </center>
+    </body>
+</html>
