@@ -1,22 +1,34 @@
 window.addEventListener('load', init);
 
-async function post(path, data)
+var Password = '';
+
+async function get()
 {
-    let response = await fetch(path, {
-        method: 'POST',
-        body: JSON.stringify(data)
+    let response = await fetch("https://io.eliaskamm.com/leel/", {
+        headers: {
+            'Authorization': `Basic ${btoa('admin:' + Password)}`,
+            'X-Requested-With': 'XMLHttpRequest'
+        },
+        method: 'GET'
     });
 
-    return await response.json();
+    if (response.status != 200) return null;
+
+    return await response.text();
 }
 
 async function init()
 {
+    let text = null;
+
+    while (text == null)
+    {
+        Password = prompt('Passwort eingeben.');
+        text = await get();
+    }
+
     let rose = document.getElementById('rose');
-
     rose.addEventListener('click', set);
-
-    let text = (await post('/leel/', {})).text ?? '';
 
     display(text);
 }
@@ -25,7 +37,16 @@ async function set()
 {
     let text = prompt('Nachricht eingeben.');
 
-    text = (await post('/leel/', { write: true, text: text })).text ?? '';
+    let response = await fetch("https://io.eliaskamm.com/leel/", {
+        headers: {
+            'Authorization': `Basic ${btoa('admin:' + Password)}`,
+            'X-Requested-With': 'XMLHttpRequest'
+        },
+        method: 'POST',
+        body: text
+    });
+
+    if (response.status != 200) return;
 
     display(text);
 }
