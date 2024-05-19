@@ -6,7 +6,7 @@ async function get()
 {
     let response = await fetch("https://io.eliaskamm.com/leel/", {
         headers: {
-            'Authorization': `Basic ${btoa('admin:' + Password)}`,
+            'Authorization': `Basic ${btoa('leel:' + Password)}`,
             'X-Requested-With': 'XMLHttpRequest'
         },
         method: 'GET'
@@ -29,6 +29,7 @@ async function init()
 
     let rose = document.getElementById('rose');
     rose.addEventListener('click', set);
+    rose.style.display = 'block';
 
     display(text);
 }
@@ -39,7 +40,7 @@ async function set()
 
     let response = await fetch("https://io.eliaskamm.com/leel/", {
         headers: {
-            'Authorization': `Basic ${btoa('admin:' + Password)}`,
+            'Authorization': `Basic ${btoa('leel:' + Password)}`,
             'X-Requested-With': 'XMLHttpRequest'
         },
         method: 'POST',

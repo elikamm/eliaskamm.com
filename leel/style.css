@@ -21,4 +21,6 @@ body {
     position: absolute;
     bottom: 5vmin; left: 5vmin;
     width: 25vmin;
+
+    display: none;
 }
